@@ -1,0 +1,33 @@
+WHILE,    LOAD		STR_BASE	
+          ADD		ITR      	
+          STORE		INDEX		
+          CLEAR				
+          ADDI		INDEX		
+          SKIPCOND	400		
+          JUMP		DO		
+          JUMP		END		
+
+  DO,			OUTPUT				
+          LOAD		ITR 		
+          ADD 		ONE 		
+          STORE		ITR 		
+          JUMP		WHILE 		
+
+END,      HALT
+ONE,      DEC		1
+ITR,      DEC		0
+INDEX,    HEX		0
+STR_BASE, HEX		12		
+
+STR,      HEX		48		/ H
+          HEX		65		/ E
+          HEX		6C		/ L
+          HEX		6C		/ L
+          HEX		6F		/ O
+          HEX		D		/ carriage return
+          HEX		57		/ W
+          HEX		6F		/ O
+          HEX		72		/ R
+          HEX		6C		/ L
+          HEX		64		/ D
+          HEX		0
